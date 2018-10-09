@@ -1,0 +1,29 @@
+{
+    "name": "solartrace-api",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/swgamerx/solartrace-api.git",
+    "author": "Sean Anteau <santeau@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "start": "node index.js",
+        "start:dev": "nodemon index.js",
+        "db:create": "sequelize-esm db:create"
+    },
+    "dependencies": {
+        "@koa/cors": "^2.2.2",
+        "dotenv": "^6.0.0",
+        "esm": "^3.0.84",
+        "koa": "^2.5.3",
+        "koa-bodyparser": "^4.2.1",
+        "koa-logger": "^3.2.0",
+        "koa-router": "^7.4.0",
+        "pg": "^7.5.0",
+        "pg-hstore": "^2.3.2",
+        "sequelize": "^4.39.0",
+        "sequelize-cli-esm": "^5.0.6"
+    },
+    "devDependencies": {
+        "nodemon": "^1.18.4"
+    }
+}
