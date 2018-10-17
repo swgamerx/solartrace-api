@@ -1,27 +1,25 @@
-import { truncate } from "fs";
-
 export default {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("Businesses", {
+    await queryInterface.createTable("Traces", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
       },
-      name: {
-        type: Sequelize.STRING
+      address: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updateAt: {
         type: Sequelize.DATE
       }
     });
   },
 
-  async down(queryInterface) {
-    await queryInterface.dropTable("Businesses");
+  async down(queryInterface, Sequelize) {
+    await queryInterface.dropTable("Traces");
   }
 };
