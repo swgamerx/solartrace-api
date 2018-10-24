@@ -47,7 +47,7 @@ router.post("/", async ctx => {
 router.patch("/:id", async ctx => {
   const attributes = ctx.request.body.data.attributes;
   const id = ctx.params.id;
-  const trace = await ctx.app.db.Trace.findById(id);
+  const trace = await ctx.app.db.Trace.findOrFail(id);
   trace.set(attributes);
   await trace.save();
   ctx.body = { data: serialize(trace) };
@@ -56,7 +56,7 @@ router.patch("/:id", async ctx => {
 // Delete by Id
 router.del("/:id", async ctx => {
   const id = ctx.params.id;
-  const Trace = await ctx.app.db.Trace.findById(id);
+  const Trace = await ctx.app.db.Trace.findBOrFail(id);
   await trace.destroy();
   ctx.status = 204;
   ctx.body = null;

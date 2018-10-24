@@ -59,7 +59,7 @@ router.patch("/:id", async ctx => {
 // Delete by Id
 router.del("/:id", async ctx => {
     const id = ctx.params.id;
-    const address = await ctx.app.db.Address.find(id);
+    const address = await ctx.app.db.Address.findOrFail(id);
     await address.destroy();
     ctx.status = 204;
     ctx.body = null;

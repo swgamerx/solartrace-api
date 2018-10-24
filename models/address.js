@@ -1,5 +1,5 @@
 export default (sequelize, DataTypes) => {
-    const Address = sequelize.define('Address',{
+    const Address = sequelize.define("Address", {
         address1: DataTypes.STRING,
         address2: DataTypes.STRING,
         city: DataTypes.STRING,
@@ -11,4 +11,5 @@ export default (sequelize, DataTypes) => {
         placeId: DataTypes.STRING,
         country: DataTypes.STRING
     });
-}
+    return Address;
+};

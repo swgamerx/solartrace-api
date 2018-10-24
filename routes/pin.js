@@ -45,7 +45,7 @@ router.post("/", async ctx => {
 router.patch("/:id", async ctx => {
   const attributes = ctx.request.body.data.attributes;
   const id = ctx.params.id;
-  const pin = await ctx.app.db.Pin.findById(id);
+  const pin = await ctx.app.db.Pin.findOrFail(id);
   Pin.set(attributes);
   await Pin.save();
   ctx.body = { data: serialize(pin) };
@@ -54,7 +54,7 @@ router.patch("/:id", async ctx => {
 // Delete by Id
 router.del("/:id", async ctx => {
   const id = ctx.params.id;
-  const pin = await ctx.app.db.Pin.findById(id);
+  const pin = await ctx.app.db.Pin.findOrFail(id);
   await pin.destroy();
   ctx.status = 204;
   ctx.body = null;
