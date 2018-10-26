@@ -2,7 +2,7 @@ export default {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("Addresses", {
       id: {
-        type: Sequelize.INTERGER,
+        type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
@@ -20,10 +20,10 @@ export default {
         type: Sequelize.STRING
       },
       zipcode: {
-        type: Sequelize.INTERGER
+        type: Sequelize.INTEGER
       },
       business: {
-        type: Sequelize.INTERGER
+        type: Sequelize.INTEGER
       },
       lat: {
         type: Sequelize.FLOAT

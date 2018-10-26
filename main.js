@@ -17,7 +17,7 @@ app.use(cors());
 app.use(bodyParser());
 
 app.use(router.allowedMethods());
-app.use(router.routes());
+app.use(router.routes()); // routes enableds
 
 app.listen(config.port, () => {
     console.log(`Started Server on Port ${config.port}`);
