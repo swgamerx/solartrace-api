@@ -1,3 +1,6 @@
+/**
+ * Addresses
+ */
 export default {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("Addresses", {
@@ -40,7 +43,7 @@ export default {
     });
   },
 
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface) {
     await queryInterface.dropTable("Addresses");
   }
 };

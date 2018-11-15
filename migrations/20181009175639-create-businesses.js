@@ -1,5 +1,6 @@
-import { truncate } from "fs";
-
+/**
+ * Businesses
+ */
 export default {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("Businesses", {
