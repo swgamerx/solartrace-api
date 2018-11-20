@@ -15,6 +15,13 @@ export default {
       },
       lng: {
         type: Sequelize.FLOAT
+      },
+      TraceId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Trace",
+          key: "id"
+        }
       }
     });
   },

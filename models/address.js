@@ -5,11 +5,14 @@ export default (sequelize, DataTypes) => {
     city: DataTypes.STRING,
     state: DataTypes.STRING,
     zipcode: DataTypes.INTEGER,
-    business: DataTypes.INTEGER,
     lat: DataTypes.FLOAT,
     lng: DataTypes.FLOAT,
     placeId: DataTypes.STRING,
     country: DataTypes.STRING
-  });
+  },{});
+
+  Address.associate = function(models){
+    Address.belongsTo(models.Business); // which business does it belong to
+  }
   return Address;
 };

@@ -12,7 +12,7 @@ const serialize = model => {
       city: model.city,
       state: model.state,
       zipcode: model.zipcode,
-      business: model.business,
+      business: model.Business,
       lat: model.lat,
       lng: model.lng,
       placeId: model.placeId,
@@ -57,14 +57,14 @@ router.patch("/:id", async ctx => {
   const id = ctx.params.id;
   const address = await ctx.app.db.Address.findOrFail(id);
   address.set(attributes);
-  await business.save();
+  await address.save();
   ctx.body = { data: serialize(address) };
 });
 
 // Delete by Id
 router.del("/:id", async ctx => {
   const id = ctx.params.id;
-  const address = await ctx.app.db.Address.find(id);
+  const address = await ctx.app.db.Address.findOrFail(id);
   await address.destroy();
   ctx.status = 204;
   ctx.body = null;

@@ -12,6 +12,8 @@ export default {
       },
       username: {
         type: Sequelize.STRING
+      }
+    });
   },
 
   async down(queryInterface) {

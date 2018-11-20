@@ -1,5 +1,5 @@
 /**
- * Businesses
+ * Business
  */
 export default {
   async up(queryInterface, Sequelize) {

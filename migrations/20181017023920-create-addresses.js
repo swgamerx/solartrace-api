@@ -25,8 +25,19 @@ export default {
       zipcode: {
         type: Sequelize.INTEGER
       },
-      business: {
-        type: Sequelize.INTEGER
+      BusinessId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Businesses",
+          key: "id"
+        }
+      },
+      CreatorId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Users",
+          key: "id"
+        }
       },
       lat: {
         type: Sequelize.FLOAT
@@ -39,6 +50,14 @@ export default {
       },
       country: {
         type: Sequelize.STRING
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
       }
     });
   },

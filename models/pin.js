@@ -4,5 +4,8 @@ export default (sequelize, DataTypes) => {
     lng: DataTypes.FLOAT, // longitude
     created: DataTypes.DATE // date of creation
   });
+  Pin.associate = function(models) {
+    Pin.belongsTo(models.Trace); // which trace does it belong to
+  };
   return Pin;
 };

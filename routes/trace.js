@@ -8,7 +8,7 @@ const serialize = model => {
     type: "traces",
     id: model.id,
     attributes: {
-      pins: model.pins,
+    //  pins: model.pins,
       type: model.type,
       squareMeters: model.squareMeters
     },
@@ -20,7 +20,7 @@ const serialize = model => {
 
 // Get All
 router.get("/", async ctx => {
-  const traces = await ctx.app.db.Traces.findAll();
+  const traces = await ctx.app.db.Trace.findAll();
   ctx.body = { data: traces.map(serialize) };
 });
 

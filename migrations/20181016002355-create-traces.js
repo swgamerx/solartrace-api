@@ -10,13 +10,32 @@ export default {
         autoIncrement: true,
         allowNull: false
       },
-      address: {
-        type: Sequelize.INTEGER
+      type: {
+        type: Sequelize.STRING
+      },
+      squareMeters: {
+        type: Sequelize.FLOAT
+      },
+      AddressId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Addresses",
+          key: "id"
+        }
+      },
+      CreatorId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Users",
+          key: "id"
+        }
       },
       createdAt: {
+        allowNull: false,
         type: Sequelize.DATE
       },
       updateAt: {
+        allowNull: false,
         type: Sequelize.DATE
       }
     });
